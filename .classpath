@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="httpclient-4.5.2.jar"/>
 	<classpathentry kind="lib" path="httpcore-4.4.4.jar"/>
 	<classpathentry kind="lib" path="dom4j-2.0.0.jar"/>
+	<classpathentry kind="lib" path="commons-logging-1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
