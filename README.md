@@ -7,6 +7,12 @@ New words are then added to our database.
 The words are then extracted and obfuscated to produce questions.
 Users then simply pick correct words that fit into sentences or phrases presented to them.
 
+# Structure
+The project is split into its front end, back end as well as the crawler.
+The crawler is a standalone java app. The app will be run daily by the server to renew the database. 
+The front end contains all the code pertaining to how the interface for the game will look to the users.
+The back end handles all the server side logic for the game. This involve pulling phrases or words from the database and turning them into questions.
+
 # Dependencies
 We have some libraries that we are dependent upon. 
 The required jars have been included in the repository.
