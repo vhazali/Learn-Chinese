@@ -54,6 +54,14 @@
       </div>
     </div>
 
+    <div class="container-fluid jumbotron">
+      <div class="pull-right">
+        <button id="next-button" name="next-button" class="btn btn-primary btn-lg" onclick="">
+              Next Question
+        </button>
+      </div>
+    </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
