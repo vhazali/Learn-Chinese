@@ -21,6 +21,9 @@
   </head>
   <body>
     <div class="container-fluid bg-info">
+      <div>
+        <h1>Score: 0/0</h1>
+      </div>
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -47,7 +50,7 @@
               <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="4">4 Four</label>
             </div>
           </div>
-          <div class="modal-footer text-muted">
+          <div class="modal-footer">
             <span id="answer"></span>
           </div>
         </div>
