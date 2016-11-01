@@ -22,7 +22,7 @@
   <body>
     <div class="container-fluid bg-info">
       <div>
-        <h1>Score: 0/0</h1>
+        <h1>Score: <span id="correct-counter">0</span>/<span id="questions-counter">0</span></h1>
       </div>
       <div class="modal-dialog">
         <div class="modal-content">
