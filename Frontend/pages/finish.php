@@ -25,6 +25,17 @@
       <br><br>
       <h1 class="text-center" id="custom-message"></h1>
 
+      <!-- Play again button -->
+      <div class="container-fluid">
+        <br><br><br>
+        <div class="center-block">
+            <button id="startbutton" name="startbutton" class="btn btn-primary btn-lg center-block" onclick="document.location.href='play.php';">
+                Play Again
+            </button>
+        </div>
+      </div>
+      
+    </div>
 
   	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
