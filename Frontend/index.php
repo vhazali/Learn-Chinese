@@ -26,6 +26,7 @@
       </div>
     </div>
 
+    <!-- Start button -->
     <div class="center-block">
         <button id="startbutton" name="startbutton" class="btn btn-primary btn-lg center-block" onclick="document.location.href='pages/play.php';">
             Click on me to Start!
