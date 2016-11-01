@@ -9,7 +9,7 @@ $(function(){
       loading.hide();
     });
 
-    $("label.btn").on('click',function () {
+    $("label.btn").on('click', function() {
       var choice = $(this).find('input:radio').val();
       $('#loadbar').show();
       $('#quiz').fadeOut();
@@ -28,8 +28,10 @@ $(function(){
             } else {
               correct_counter++;
             }
-            document.getElementById("correct-counter").textContent=""+correct_counter;
-            document.getElementById("questions-counter").textContent=""+questions_counter;
+            // Update score counter
+            $('#correct-counter').text(correct_counter);
+            $('#questions-counter').text(questions_counter);
+            
             $('#loadbar').fadeOut();
       }, 1500);
     });
