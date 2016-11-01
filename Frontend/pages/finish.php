@@ -18,6 +18,12 @@
     <![endif]-->
   </head>
   <body>
+    <div class="container-fluid bg-info">
+      <h1 class="text-center"> Thank you for playing Learn Chinese! </h1>
+      <br><br>
+      <h1 class="text-center"> You had <span id="correct-counter"></span> correct out of <span id="questions-counter"></span> questions.</h1>
+      <br><br>
+      <h1 class="text-center" id="custom-message"></h1>
 
 
   	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
