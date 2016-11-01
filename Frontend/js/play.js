@@ -44,4 +44,8 @@ $(function(){
         else 
             return 'CORRECT';
     }; 
+
+    $('#finish-button').on('click', function() {
+    	window.location.href='/pages/finish.php';
+    });
 }); 

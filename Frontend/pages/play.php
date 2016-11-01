@@ -58,6 +58,11 @@
     </div>
 
     <div class="container-fluid jumbotron">
+      <div class="pull-left">
+        <button id="finish-button" name="finish-button" class="btn btn-primary btn-lg" onclick="">
+              Finish
+        </button>
+      </div>
       <div class="pull-right">
         <button id="next-button" name="next-button" class="btn btn-primary btn-lg" onclick="">
               Next Question
