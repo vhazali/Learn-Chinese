@@ -19,10 +19,12 @@ $(function(){
         $( "#answer" ).html(answer);
         $('#quiz').show();
             // Display the correct choice in green
-            document.getElementById("option-"+$ans).className=document.getElementById("option-"+$ans).className.replace( /(?:^|\s)btn-primary(?!\S)/g , ' btn-success' );
+            $('#option-'+$ans).removeClass('btn-primary');
+            $('#option-'+$ans).addClass('btn-success');
             // Display the wrong answer in red
             if(answer == 'INCORRECT') {
-              document.getElementById("option-"+choice).className=document.getElementById("option-"+choice).className.replace( /(?:^|\s)btn-primary(?!\S)/g , ' btn-danger' );
+            	$('#option-'+choice).removeClass('btn-primary');
+            	$('#option-'+choice).addClass('btn-danger');
             } else {
               correct_counter++;
             }
