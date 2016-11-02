@@ -22,14 +22,16 @@
     <!-- Welcome message -->
     <div class="jumbotron">
       <div class="container">
-        <h1 class="text-center"> Hello! Welcome to Learn Chinese!</h1>
+        <h1 class="text-center"> 你好 欢迎来学华语</h1>
+        <h3 class="text-center text-muted">Hello! Welcome to Learn Chinese!</h3>
       </div>
     </div>
 
     <!-- Start button -->
     <div class="center-block">
         <button id="startbutton" name="startbutton" class="btn btn-primary btn-lg center-block" onclick="document.location.href='pages/play.php';">
-            Click on me to Start!
+            <span>游戏开始</span><br>
+            <span><h6>Click on me to Start!</h6></span>
         </button>
     </div>
 

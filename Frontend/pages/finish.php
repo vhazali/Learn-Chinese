@@ -19,18 +19,20 @@
   </head>
   <body>
     <div class="container-fluid bg-info">
-      <h1 class="text-center"> Thank you for playing Learn Chinese! </h1>
+      <h1 class="text-center"> 谢谢你尝试我们的游戏</h1><h5 class="text-center">Thank you for playing Learn Chinese!</h5>
       <br><br>
-      <h1 class="text-center"> You had <span id="correct-counter"></span> correct out of <span id="questions-counter"></span> questions.</h1>
+      <h1 class="text-center"><span class="questions-counter"></span>题中你答对了<span class="correct-counter"></span>题</h1>
+      <h5 class="text-center"> You had <span class="correct-counter"></span> correct out of <span class="questions-counter"></span> questions.</h5>
       <br><br>
-      <h1 class="text-center" id="custom-message"></h1>
+      <h1 class="text-center" id="custom-message-chinese"></h1>
+      <h5 class="text-center" id="custom-message-english"></h5>
 
       <!-- Play again button -->
       <div class="container-fluid">
         <br><br><br>
         <div class="center-block">
             <button id="startbutton" name="startbutton" class="btn btn-primary btn-lg center-block" onclick="document.location.href='play.php';">
-                Play Again
+                <span>再玩</span><span><h6>Play Again</h6></span>
             </button>
         </div>
       </div>

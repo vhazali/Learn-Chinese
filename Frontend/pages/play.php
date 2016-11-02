@@ -60,12 +60,12 @@
     <div class="container-fluid jumbotron">
       <div class="pull-left">
         <button id="finish-button" name="finish-button" class="btn btn-primary btn-lg" onclick="">
-              Finish
+              结束 Finish
         </button>
       </div>
       <div class="pull-right">
         <button id="next-button" name="next-button" class="btn btn-primary btn-lg" onclick="">
-              Next Question
+              下一题 Next Question
         </button>
       </div>
     </div>
