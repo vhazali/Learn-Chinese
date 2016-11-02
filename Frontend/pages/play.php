@@ -27,7 +27,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3><span class="label label-warning" id="qid">2</span> Option 3 is the correct answer.</h3>
+            <h3><span class="label label-warning" id="qid">1</span> Option 3 is the correct answer.</h3>
           </div>
           <div class="modal-body">
             <div class="col-xs-3 col-xs-offset-5">
