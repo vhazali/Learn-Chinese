@@ -14,8 +14,9 @@ $(function(){
       var choice = $(this).find('input:radio').val();
       $('#loadbar').show();
       $('#quiz').fadeOut();
+      questions_counter++;
+
       setTimeout(function(){
-        questions_counter++;
         var answer = $(this).checking(choice);
         $( "#answer" ).html(answer);
         $('#quiz').show();
@@ -32,6 +33,8 @@ $(function(){
             // Update score counter
             $('#correct-counter').text(correct_counter);
             $('#questions-counter').text(questions_counter);
+            // Update question number
+            $('#qid').text(questions_counter+1);
 
             $('#loadbar').fadeOut();
       }, 1500);
