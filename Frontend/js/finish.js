@@ -16,7 +16,7 @@ $(function(){
   }
 
   // Display message
-  if(question_counter != null && correct_counter !=null) {
+  if(question_counter != null && correct_counter !=null && question_counter!= 0) {
     percentage = correct_counter*1.0 / question_counter;
     console.log(percentage);
     switch (true) {
