@@ -28,18 +28,15 @@ for sentence in parsed_json['sentences']:
     question = sentence[:index] + "__" + sentence[index + 1:]
     # Get a random index to set as correct option
     answer_index = random.randint(1,4)
-    print "answer index: ", answer_index
 
     for i in range(1,5):
-        print "i: ", i
         # write the correct option as the answer
         if i == answer_index:
-            print "found ans index"
             temp.append({i:answer})
         else:
             # Generate random words to act as alternative options
             temp.append({i:unichr(ord(answer)+i)})
-    temp.append("ans":answer_index)
+    temp.append({"ans":str(answer_index)})
     questions[question]=temp
 
 output_json = {
@@ -49,6 +46,8 @@ output_json = {
 
 for q in questions:
     output_json[q]=questions[q]
+
+print output_json
 
 json_string = json.dumps(output_json, ensure_ascii=False).encode('utf8')
 print json_string
