@@ -46,3 +46,23 @@ $(function(){
     	window.location.href='/pages/finish.php';
     });
 }); 
+// Update score counter
+function updateScoreCounter(correct_counter, questions_counter) {
+  $('#correct-counter').text(correct_counter);
+  $('#questions-counter').text(questions_counter);
+}
+
+// Update colour of quiz labels based on choice
+function updateQuiz(answer, choice, correct_counter, questions_counter){
+  // Display the correct choice in green
+  $('#option-'+$ans).removeClass('btn-primary');
+  $('#option-'+$ans).addClass('btn-success');
+  // Display the wrong answer in red
+  if(answer == 'INCORRECT') {
+    $('#option-'+choice).removeClass('btn-primary');
+    $('#option-'+choice).addClass('btn-danger');
+  } else {
+    correct_counter++;
+  }
+  return correct_counter;
+}
