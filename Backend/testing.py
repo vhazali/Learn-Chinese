@@ -11,15 +11,19 @@ json_data.close()
 date = parsed_json['date extracted']
 # Get the number of sentences
 count = parsed_json['count']
-# questions dictionary
-questions = {}
-# temp list to hold the multiple choice questions
-temp = []
+
+# Dictionary to represent the output json file
+output_json = {
+    "count":count,
+    "date extracted":date,
+}
+
+testdict = {}
 
 # Parse each sentence to generate questions
 for sentence in parsed_json['sentences']:
-    # Empty the list
-    del temp[:]
+    # Empty the dictionary
+    options = {}
     # Get a random index to remove from sentence
     index = random.randint(0,len(sentence)-1)
     # Store the correct answer
@@ -32,25 +36,14 @@ for sentence in parsed_json['sentences']:
     for i in range(1,5):
         # write the correct option as the answer
         if i == answer_index:
-            temp.append({i:answer})
+            options[i] = answer
         else:
             # Generate random words to act as alternative options
-            temp.append({i:unichr(ord(answer)+i)})
-    temp.append({"ans":str(answer_index)})
-    questions[question]=temp
-
-output_json = {
-    "count":count,
-    "date extracted":date,
-}
-
-for q in questions:
-    output_json[q]=questions[q]
-
-print output_json
+            options[i] = unichr(ord(answer)+i)
+    options["ans"] = str(answer_index)
+    output_json[question] = options
 
 json_string = json.dumps(output_json, ensure_ascii=False).encode('utf8')
-print json_string
 
 outfile = open("data/output.json","w+")
 outfile.write(json_string)
