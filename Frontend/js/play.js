@@ -38,12 +38,12 @@ $(function(){
             return 'CORRECT';
     }; 
 
-    $('#finish-button').on('click', function() {
-    	// Save data to cookie to display on finish page
-    	sessionStorage.setItem('corrects',correct_counter);
-    	sessionStorage.setItem('total', questions_counter);
-    	// Go to finish page
-    	window.location.href='/pages/finish.php';
+    $('#finish-button').on('click', function(){
+      // Save data to cookie to display on finish page
+      sessionStorage.setItem('corrects',correct_counter);
+      sessionStorage.setItem('total', questions_counter);
+      // Go to finish page
+      window.location.href='/pages/finish.php';
     });
 }); 
 // Update score counter
