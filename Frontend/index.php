@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Learn Chinese</title>
     <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Frontend/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Favicon -->
-    <link rel="icon" type="image/gif" href="img/favicon.gif">
+    <link rel="icon" type="Frontend/image/gif" href="Frontend/img/favicon.gif">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +29,7 @@
 
     <!-- Start button -->
     <div class="center-block">
-        <button id="startbutton" name="startbutton" class="btn btn-primary btn-lg center-block" onclick="document.location.href='pages/play.php';">
+        <button id="startbutton" name="startbutton" class="btn btn-primary btn-lg center-block" onclick="document.location.href='Frontend/pages/play.php';">
             <span>游戏开始</span><br>
             <span><h6>Click on me to Start!</h6></span>
         </button>
@@ -38,6 +38,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="Frontend/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
