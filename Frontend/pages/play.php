@@ -27,7 +27,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3><span class="label label-warning" id="qid">2</span> Option 3 is the correct answer.</h3>
+            <h3><span class="label label-warning" id="qid">1</span> Option 3 is the correct answer.</h3>
           </div>
           <div class="modal-body">
             <div class="col-xs-3 col-xs-offset-5">
@@ -44,10 +44,10 @@
             </div>
 
             <div class="quiz" id="quiz" data-toggle="buttons">
-              <label class="element-animation1 btn btn-lg btn-primary btn-block " id="option-1"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" id="option-1-icon"></i></span> <input type="radio" name="q_answer" value="1">1 One</label>
-              <label class="element-animation2 btn btn-lg btn-primary btn-block" id="option-2"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" id="option-2-icon"></i></span> <input type="radio" name="q_answer" value="2">2 Two</label>
-              <label class="element-animation3 btn btn-lg btn-primary btn-block" id="option-3"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" id="option-3-icon"></i></span> <input type="radio" name="q_answer" value="3">3 Three</label>
-              <label class="element-animation4 btn btn-lg btn-primary btn-block" id="option-4"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" id="option-4-icon"></i></span> <input type="radio" name="q_answer" value="4">4 Four</label>
+              <label class="element-animation1 btn btn-lg btn-primary btn-block " id="option-1"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" id="option-1-icon"></i></span> <input type="radio" name="q_answer" value="1">One</label>
+              <label class="element-animation2 btn btn-lg btn-primary btn-block" id="option-2"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" id="option-2-icon"></i></span> <input type="radio" name="q_answer" value="2">Two</label>
+              <label class="element-animation3 btn btn-lg btn-primary btn-block" id="option-3"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" id="option-3-icon"></i></span> <input type="radio" name="q_answer" value="3">Three</label>
+              <label class="element-animation4 btn btn-lg btn-primary btn-block" id="option-4"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right" id="option-4-icon"></i></span> <input type="radio" name="q_answer" value="4">Four</label>
             </div>
           </div>
           <div class="modal-footer">
@@ -60,12 +60,12 @@
     <div class="container-fluid jumbotron">
       <div class="pull-left">
         <button id="finish-button" name="finish-button" class="btn btn-primary btn-lg" onclick="">
-              Finish
+              结束 Finish
         </button>
       </div>
       <div class="pull-right">
         <button id="next-button" name="next-button" class="btn btn-primary btn-lg" onclick="">
-              Next Question
+              下一题 Next Question
         </button>
       </div>
     </div>
