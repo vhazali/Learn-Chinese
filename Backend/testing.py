@@ -26,7 +26,8 @@ output_json = {
     "date extracted":date,
 }
 
-testdict = {}
+# Dictionary to hold all the questions
+questions = {}
 
 # Parse each sentence to generate questions
 for sentence in parsed_json['sentences']:
@@ -49,7 +50,9 @@ for sentence in parsed_json['sentences']:
             # Generate random words to act as alternative options
             options[i] = unichr(ord(answer)+i)
     options["ans"] = str(answer_index)
-    output_json[question] = options
+    questions[question] = options
+
+output_json["questions"] = questions
 
 output_file = "data/question-"+date+".json"
 
