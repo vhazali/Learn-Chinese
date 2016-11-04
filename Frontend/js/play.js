@@ -10,33 +10,22 @@ $(function(){
     });
     sessionStorage.clear();
 
-    $("label.btn").on('click', function() {
-      var choice = $(this).find('input:radio').val();
+    $("label.btn").on('click', function(){
+      // show spinning
       $('#loadbar').show();
       $('#quiz').fadeOut();
+
+      attempted = true;
+      var choice = $(this).find('input:radio').val();
+      // Validate choice
+      var answer = $(this).checking(choice);
       questions_counter++;
-
+      correct_counter = updateQuiz(answer, choice, correct_counter, questions_counter);
       setTimeout(function(){
-        var answer = $(this).checking(choice);
-        $( "#answer" ).html(answer);
+        $('#answer').html(answer);
         $('#quiz').show();
-            // Display the correct choice in green
-            $('#option-'+$ans).removeClass('btn-primary');
-            $('#option-'+$ans).addClass('btn-success');
-            // Display the wrong answer in red
-            if(answer == 'INCORRECT') {
-            	$('#option-'+choice).removeClass('btn-primary');
-            	$('#option-'+choice).addClass('btn-danger');
-            } else {
-              correct_counter++;
-            }
-            // Update score counter
-            $('#correct-counter').text(correct_counter);
-            $('#questions-counter').text(questions_counter);
-            // Update question number
-            $('#qid').text(questions_counter+1);
-
-            $('#loadbar').fadeOut();
+        updateScoreCounter(correct_counter, questions_counter);
+        $('#loadbar').fadeOut();
       }, 1500);
     });
 
