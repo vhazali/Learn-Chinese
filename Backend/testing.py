@@ -1,8 +1,16 @@
 import json
 import random
+import sys
+
+if len(sys.argv) < 2:
+    print "Error. Input file not specified."
+    sys.exit()
+
+
+input_file = sys.argv[1]
 
 # Reads json file
-json_data = open("data/sample-jumbled-without-newline.json","r")
+json_data = open(input_file,"r")
 #parses json file into objects
 parsed_json = json.load(json_data)
 json_data.close()
@@ -43,8 +51,10 @@ for sentence in parsed_json['sentences']:
     options["ans"] = str(answer_index)
     output_json[question] = options
 
+output_file = "data/question-"+date+".json"
+
 json_string = json.dumps(output_json, ensure_ascii=False).encode('utf8')
 
-outfile = open("data/output.json","w+")
+outfile = open(output_file,"w+")
 outfile.write(json_string)
 outfile.close()
