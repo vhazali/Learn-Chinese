@@ -1,3 +1,22 @@
+// Array of questions. Format: 
+// questions:[
+//   question: ""
+//   options: [
+//   key: "1"
+//   value: "",
+//   key: "2" 
+//   value: "",
+//   key:"3"
+//   value: "",
+//   key:"4"
+//   value: "",
+//   key: "ans:"
+//   value: ""
+//   ],
+//   ...
+// ]
+var questions = [];
+
 $(function(){
     var loading = $('#loadbar').hide();
     var questions_counter=0;
@@ -76,8 +95,8 @@ function hideSpin() {
   $('#loadbar').fadeOut();
 }
 
-function hasQuestions (count) {
-  if (count < 3) 
+function hasQuestions () {
+  if (questions.length < 3) 
     return false;
   return true;
 }
@@ -115,24 +134,30 @@ function updateQuiz(answer, choice, correct_counter, questions_counter){
 
 function nextQuestion(questions_counter) {
   showSpin();
-  fetchQuestions();
+  if(!hasQuestions) {
+    fetchQuestions();
+  }
    // Update question number
   $('#qid').text(questions_counter+1);
+
 }
 
 function fetchQuestions() {
-  var jqxhr = $.getJSON("../../Backend/data/output.json", {
+  var jqxhr = $.getJSON("../../Backend/data/question-2 nov 2016.json", {
     question: "questions"
   })
-    .done(processJson)
-    .fail(function() {
-      console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
-    });
+    .done(processJson);
 }
 
+// Read the JSON object, and then populates the questions array
 function processJson(data) {
-  console.log(data);
+  var count = data.count;
+  for (q in data.questions) {
+    options=[];
+    for (o in data["questions"][q]) {
+      temp = {key:o, value:data["questions"][q][o]};
+      options.push(temp);
+    }
+    questions.push({question:q, options:options});
+  }
 }
