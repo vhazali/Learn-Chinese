@@ -61,7 +61,7 @@ $(function(){
       sessionStorage.setItem('corrects',correct_counter);
       sessionStorage.setItem('total', questions_counter);
       // Go to finish page
-      window.location.href='/pages/finish.php';
+      window.location.href='finish.php';
     });
 
     $('#next-button').on('click', function(){
