@@ -6,7 +6,6 @@ if len(sys.argv) < 2:
     print "Error. Input file not specified."
     sys.exit()
 
-
 input_file = sys.argv[1]
 
 # Reads json file
@@ -22,8 +21,8 @@ count = parsed_json['count']
 
 # Dictionary to represent the output json file
 output_json = {
-    "count":count,
-    "date extracted":date,
+"count":count,
+"date extracted":date,
 }
 
 # Dictionary to hold all the questions
@@ -34,7 +33,10 @@ for sentence in parsed_json['sentences']:
     # Empty the dictionary
     options = {}
     # Get a random index to remove from sentence
-    index = random.randint(0,len(sentence)-1)
+    while True :
+      index = random.randint(0,len(sentence)-1)
+      if sentence[index] != " " :
+        break
     # Store the correct answer
     answer = sentence[index]
     # Form the new question, with __ as the replacement
@@ -49,15 +51,15 @@ for sentence in parsed_json['sentences']:
         else:
             # Generate random words to act as alternative options
             options[i] = unichr(ord(answer)+i)
-    options["ans"] = str(answer_index)
-    questions[question] = options
+            options["ans"] = str(answer_index)
+            questions[question] = options
 
-output_json["questions"] = questions
+            output_json["questions"] = questions
 
-output_file = "data/questions.json"
+            output_file = "data/questions.json"
 
-json_string = json.dumps(output_json, ensure_ascii=False).encode('utf8')
+            json_string = json.dumps(output_json, ensure_ascii=False).encode('utf8')
 
-outfile = open(output_file,"w+")
-outfile.write(json_string)
-outfile.close()
+            outfile = open(output_file,"w+")
+            outfile.write(json_string)
+            outfile.close()
