@@ -27,7 +27,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h3><span class="label label-warning" id="qid">1</span id="question"> Option 3 is the correct answer.</h3>
+            <h3><span class="label label-warning" id="qid">1</span><span id="question">Option 3 is the correct answer.</span></h3>
           </div>
           <div class="modal-body">
             <div class="col-xs-3 col-xs-offset-5">
@@ -71,7 +71,7 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <!-- javascript for play.php-->
