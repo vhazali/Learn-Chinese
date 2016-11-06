@@ -1,4 +1,4 @@
-# Learn Chinese
+# [Learn Chinese](http://www.learnchinese.ml)
 Simple game to learn how to form Chinese words
 
 The project utilises a python web crawler to get our database of questions.
@@ -7,6 +7,10 @@ New sentences are then added to our database.
 The sentences are then extracted and obfuscated to produce questions.
 Users then simply pick correct words that fit into sentences or phrases presented to them.
 The sentences care basically song lyrics that we have crawled from mojim.com
+
+The game is hosted on our [www.learnchinese.ml](www.learnchinese.ml). However, in order to access the game, you must be connected to the National University of Singapore School of Computing's network (remote access possible via SoC VPN). 
+
+Source code is available on the [GitHub page](https://github.com/vhazali/Learn-Chinese)
 
 # Structure
 The project is split into its front end, back end as well as the crawler.
