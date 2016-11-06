@@ -70,7 +70,7 @@ def parse_html_page( html_text, page_type ):
     # Check if we should crawl or scrape content
     if page_type == 'singers':
         # Since it's a page of all singers, get links to other singers
-        soup = BeautifulSoup(html_text, "html.parser", parseOnlyThese=SoupStrainer('a'))
+        soup = BeautifulSoup(html_text, "html.parser", parse_only=SoupStrainer('a'))
         for link in soup:
             if link.has_attr('href'):
                 link_type = determine_html_page_type (link['href'])
@@ -81,7 +81,7 @@ def parse_html_page( html_text, page_type ):
 
     elif page_type == "singer":
         # Since it's singer page, get all links to other songs
-        soup = BeautifulSoup(html_text, "html.parser", parseOnlyThese=SoupStrainer('a'))
+        soup = BeautifulSoup(html_text, "html.parser", parse_only=SoupStrainer('a'))
         for link in soup:
             if link.has_attr('href'):
                 link_type = determine_html_page_type (link['href'])
