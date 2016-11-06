@@ -21,8 +21,8 @@ count = parsed_json['count']
 
 # Dictionary to represent the output json file
 output_json = {
-"count":count,
-"date extracted":date,
+    "count":count,
+    "date extracted":date,
 }
 
 # Dictionary to hold all the questions
@@ -34,9 +34,9 @@ for sentence in parsed_json['sentences']:
     options = {}
     # Get a random index to remove from sentence
     while True :
-      index = random.randint(0,len(sentence)-1)
-      if sentence[index] != " " :
-        break
+        index = random.randint(0,len(sentence)-1)
+        if sentence[index] != " ":
+            break
     # Store the correct answer
     answer = sentence[index]
     # Form the new question, with __ as the replacement
