@@ -12,7 +12,8 @@ sentences = {}
 URL_LIMIT = 10
 
 if len(sys.argv) == 2:
-    URL_LIMIT = sys.argv[1]
+    URL_LIMIT = int(sys.argv[1])
+    print "Limit set to: ", URL_LIMIT
 else:
     print "Limit not set. Using default of 10 urls."
 
