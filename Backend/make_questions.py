@@ -54,7 +54,7 @@ for sentence in parsed_json['sentences']:
 
 output_json["questions"] = questions
 
-output_file = "data/question-"+date+".json"
+output_file = "data/questions.json"
 
 json_string = json.dumps(output_json, ensure_ascii=False).encode('utf8')
 
