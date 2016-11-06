@@ -99,14 +99,12 @@ $(function(){
 
 // Shows spinning animation
 function showSpin() {
-    console.log("spinning...");
     $('#loadbar').show();
     $('#quiz').fadeOut();
 }
 
 // Hides spinning animation
 function hideSpin() {
-    console.log("stop spinning");
     $('#quiz').show();
     $('#loadbar').fadeOut();
 }
