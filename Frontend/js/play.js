@@ -187,7 +187,7 @@ function nextQuestion(answer, choice, questions_counter) {
 
 // Sends ajax request to get more questions
 function fetchQuestions() {
-    var jqxhr = $.getJSON("../../Backend/data/question-2 nov 2016.json", {
+    var jqxhr = $.getJSON("../../Backend/data/questions.json", {
         question: "questions"
     })
     .done(processJson);
