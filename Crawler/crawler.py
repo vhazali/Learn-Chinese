@@ -1,3 +1,4 @@
+import sys
 import urllib
 from bs4 import BeautifulSoup, SoupStrainer
 import Queue
@@ -9,6 +10,11 @@ url_queue = Queue.Queue()
 seen_url = {}
 sentences = {}
 URL_LIMIT = 10
+
+if len(sys.argv) == 2:
+    URL_LIMIT = sys.argv[1]
+else:
+    print "Limit not set. Using default of 10 urls."
 
 def has_reached_limit():
     if len(seen_url) > URL_LIMIT:
