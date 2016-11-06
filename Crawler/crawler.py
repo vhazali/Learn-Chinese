@@ -45,13 +45,15 @@ def parse_lyrics_page ( lyrics ) :
     for sentence in lyrics :
         if len(sentence) < 5 :
             continue
-        if "\uff1a" in sentence :
+        if u"\uFF1A" in sentence :
             continue
         if ".com" in sentence :
             continue
         if "-" in sentence : 
             continue
         if ":" in sentence:
+            continue
+        if u"\uFF08" in sentence:
             continue
         if re.search('[a-zA-Z]',sentence) :
             continue
