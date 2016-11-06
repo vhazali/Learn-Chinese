@@ -183,7 +183,7 @@ function nextQuestion(answer, choice, questions_counter) {
     $('#option-2-value').text(next.options[1].value);
     $('#option-3-value').text(next.options[2].value);
     $('#option-4-value').text(next.options[3].value);
-    $('#answer').text();
+    $('#answer').text("");
     return parseInt(next.options[4].value);
 }
 
