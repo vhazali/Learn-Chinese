@@ -5,6 +5,7 @@ import Queue
 import re
 import time
 import json
+import threading
 
 url_queue = Queue.Queue()
 seen_url = {}
@@ -18,16 +19,21 @@ else:
     print "Limit not set. Using default of 10 urls."
 
 def has_reached_limit():
-    if len(seen_url) > URL_LIMIT:
+    if len(seen_url) >= URL_LIMIT:
         return True
     return False
 
 def add_if_not_seen( url ):
-    if has_reached_limit():
-        return
-    if not seen_url.has_key(url):
-        seen_url[url] = None
-        url_queue.put(url)
+    lock = threading.RLock()
+    lock.acquire()
+    try:
+        if has_reached_limit():
+            return
+        if not seen_url.has_key(url):
+            seen_url[url] = None
+            url_queue.put(url)
+    finally:
+        lock.release()
 
 def get_html_from_url ( url ):
     handle = urllib.urlopen(url)
@@ -65,7 +71,6 @@ def parse_lyrics_page ( lyrics ):
         if re.search('[a-zA-Z]',sentence):
             continue
         sentences[sentence] = None;
-
 
 def parse_html_page( html_text, page_type ):
     # Check if we should crawl or scrape content
@@ -110,20 +115,43 @@ def write_sentences_to_json():
     outfile.write(json_string)
     outfile.close()
 
+def process_url():
+    current_url = url_queue.get()
+    print "current url : ", current_url
+    page_type = determine_html_page_type(current_url)
+    current_html = get_html_from_url(current_url)
+    parse_html_page(current_html, page_type)
+
 def start_spider():
     # Seed urls
-    # Song page
-    add_if_not_seen("https://mojim.com/cny102520x28x4.htm")
-    # Singer page
-    add_if_not_seen("https://mojim.com/cnh100092.htm")
     # Singers page
-    add_if_not_seen("https://mojim.com/cnza1.htm")
+    # add_if_not_seen("https://mojim.com/cnza1.htm")
+    # Singer pages
+    add_if_not_seen("https://mojim.com/cnh100092.htm")
+    add_if_not_seen("https://mojim.com/cnh102201.htm")
+    add_if_not_seen("https://mojim.com/cnh104775.htm")
+    add_if_not_seen("https://mojim.com/cnh100091.htm")
+    add_if_not_seen("https://mojim.com/cnh101117.htm")
+    add_if_not_seen("https://mojim.com/cnh109372.htm")
+    add_if_not_seen("https://mojim.com/cnh100951.htm")
+    # add_if_not_seen("https://mojim.com/cnh100015.htm")
+    # add_if_not_seen("https://mojim.com/cnh102386.htm")
+    # Song pages
+    add_if_not_seen("https://mojim.com/cny102520x28x4.htm")
+    add_if_not_seen("https://mojim.com/cny100092x55x12.htm")
+    add_if_not_seen("https://mojim.com/cny102201x3x1.htm")
+    add_if_not_seen("https://mojim.com/cny102201x2x1.htm")
+    thread_list=[]
     while not url_queue.empty():
-        current_url = url_queue.get()
-        print "current url : ", current_url
-        page_type = determine_html_page_type(current_url)
-        current_html = get_html_from_url(current_url)
-        parse_html_page(current_html, page_type)
+        for i in (1,10):
+            print "spawning thread"
+            t = threading.Thread(target=process_url)
+            t.start()
+            thread_list.append(t)
+        # process_url()
+        print "joining..."
+        for thread in thread_list:
+            thread.join()
 
     print "number of questions: ", len(sentences) 
     write_sentences_to_json()
